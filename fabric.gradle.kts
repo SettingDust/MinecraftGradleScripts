@@ -29,6 +29,8 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
         }"
     )
 
+    library("fabric-loader", "net.fabricmc", "fabric-loader").version("0.15.11")
+
     val fabricApiVersions = mapOf(
         "1.21" to "0.100.1"
     )

@@ -8,7 +8,6 @@ val minecraft: String by settings.extra
 val kotlin: String? by settings.extra
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         maven("https://thedarkcolour.github.io/KotlinForForge/") {
             content {

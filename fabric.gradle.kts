@@ -20,7 +20,7 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     val yarnMappingVersions = mapOf(
         "1.21" to "2"
     )
-    library("yarn", "net.fabricmc", "yarn").version(
+    library("mapping-yarn", "net.fabricmc", "yarn").version(
         "$minecraft+build.${
             yarnMappingVersions.getOrElse(minecraft) {
                 println("Unknown minecraft version $minecraft to get yarn mapping version. Fallback to 1")

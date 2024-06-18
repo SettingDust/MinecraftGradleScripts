@@ -1,5 +1,15 @@
 val minecraft: String by settings.extra
 
+dependencyResolutionManagement {
+    repositories {
+        maven("https://maven.terraformersmc.com/") {
+            content {
+                includeGroupAndSubgroups("com.terraformersmc")
+            }
+        }
+    }
+}
+
 dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     // https://modrinth.com/mod/modmenu/versions
     val modmenuVersions = mapOf(

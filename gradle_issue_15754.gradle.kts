@@ -11,6 +11,11 @@ allprojects {
                 includeGroupAndSubgroups("org.parchmentmc")
             }
         }
+        maven("https://maven.terraformersmc.com/") {
+            content {
+                includeGroupAndSubgroups("com.terraformersmc")
+            }
+        }
         maven("https://repo.spongepowered.org/repository/maven-public/")
         maven("https://maven.neoforged.net/releases")
     }

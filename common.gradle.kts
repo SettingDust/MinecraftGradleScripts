@@ -5,6 +5,12 @@ pluginManagement {
     }
 }
 
+dependencyResolutionManagement {
+    repositories {
+        maven("https://api.modrinth.com/maven") { content { includeGroup("maven.modrinth") } }
+    }
+}
+
 dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     // https://plugins.gradle.org/plugin/org.jetbrains.gradle.plugin.idea-ext
     plugin("idea-ext", "org.jetbrains.gradle.plugin.idea-ext").version("1.+")

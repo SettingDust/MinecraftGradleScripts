@@ -16,6 +16,11 @@ allprojects {
                 includeGroupAndSubgroups("com.terraformersmc")
             }
         }
+        maven("https://maven.isxander.dev/releases") {
+            content {
+                includeGroupAndSubgroups("dev.isxander")
+            }
+        }
         maven("https://repo.spongepowered.org/repository/maven-public/")
         maven("https://maven.neoforged.net/releases")
     }

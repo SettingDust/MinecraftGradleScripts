@@ -1,3 +1,5 @@
+val minecraft: String by settings.extra
+
 dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     // https://modrinth.com/mod/modmenu/versions
     val modmenuVersions = mapOf(

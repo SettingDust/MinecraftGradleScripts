@@ -24,5 +24,6 @@ allprojects {
         maven("https://api.modrinth.com/maven") { content { includeGroup("maven.modrinth") } }
         maven("https://repo.spongepowered.org/repository/maven-public/")
         maven("https://maven.neoforged.net/releases")
+        mavenCentral()
     }
 }

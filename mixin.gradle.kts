@@ -1,5 +1,10 @@
 dependencyResolutionManagement {
     repositories {
+        maven("https://jitpack.io") {
+            content {
+                includeGroupAndSubgroups("com.github")
+            }
+        }
         maven("https://repo.spongepowered.org/repository/maven-public/")
     }
 }

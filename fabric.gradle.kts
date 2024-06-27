@@ -18,7 +18,8 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     plugin("fabric-loom", "fabric-loom").version("1.7.+")
 
     val yarnMappingVersions = mapOf(
-        "1.21" to "2"
+        "1.21" to "2",
+        "1.20.1" to "10"
     )
     library("mapping-yarn", "net.fabricmc", "yarn").version(
         "$minecraft+build.${
@@ -32,7 +33,8 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     library("fabric-loader", "net.fabricmc", "fabric-loader").version("0.15.11")
 
     val fabricApiVersions = mapOf(
-        "1.21" to "0.100.1"
+        "1.21" to "0.100.1",
+        "1.20.1" to "0.92.2"
     )
     library("fabric-api", "net.fabricmc.fabric-api", "fabric-api").version("${
         fabricApiVersions.getOrElse(minecraft) {

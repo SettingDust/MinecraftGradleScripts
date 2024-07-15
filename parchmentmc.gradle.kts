@@ -1,28 +1,30 @@
 pluginManagement {
     repositories {
         maven("https://maven.parchmentmc.org") {
-            content {
-                includeGroupAndSubgroups("org.parchmentmc")
-            }
+            content { includeGroupAndSubgroups("org.parchmentmc") }
         }
     }
 }
 
+val minecraft: String by settings.extra
+
 dependencyResolutionManagement {
     repositories {
         maven("https://maven.parchmentmc.org") {
-            content {
-                includeGroupAndSubgroups("org.parchmentmc")
-            }
+            content { includeGroupAndSubgroups("org.parchmentmc") }
         }
     }
 }
 
 dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
-    val minecraftParchmentmc = "1.20.6"
-    version("minecraft-parchmentmc", minecraftParchmentmc)
-    val parchmentmc = "2024.06.16"
-    version("parchmentmc", parchmentmc)
+    val parchmentmcVersions = mapOf("1.21" to "2024.07.07", "1.20.1" to "2023.09.03")
+    val parchmentmcVersion =
+        parchmentmcVersions[minecraft]?.let { minecraft to it }
+            ?: parchmentmcVersions.entries.first().toPair()
 
-    library("parchmentmc-loom", "org.parchmentmc.data", "parchment-$minecraftParchmentmc").version(parchmentmc)
+    version("parchmentmc", parchmentmcVersion.second)
+
+    library("parchmentmc-loom", "org.parchmentmc.data", "parchment-${parchmentmcVersion.first}")
+        .version(parchmentmcVersion.second)
+    plugin("librarian-forgegradle", "org.parchmentmc.librarian.forgegradle").version("1.+")
 }

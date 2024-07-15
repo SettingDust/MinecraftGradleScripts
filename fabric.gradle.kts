@@ -11,8 +11,6 @@ val kotlin: String? by settings.extra
 // https://linkie.shedaniel.dev/dependencies?loader=fabric
 dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     plugin("explosion", "lol.bai.explosion").version("0.2.0")
-
-    version("minecraft", minecraft)
     library("minecraft-fabric", "com.mojang", "minecraft").version(minecraft)
 
     plugin("fabric-loom", "fabric-loom").version("1.7.+")

@@ -11,7 +11,11 @@ dependencyResolutionManagement {
     }
 }
 
+val minecraft: String by settings.extra
+
 dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
+    version("minecraft", minecraft)
+
     // https://plugins.gradle.org/plugin/org.jetbrains.gradle.plugin.idea-ext
     plugin("idea-ext", "org.jetbrains.gradle.plugin.idea-ext").version("1.+")
 

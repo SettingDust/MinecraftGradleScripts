@@ -18,9 +18,9 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     // https://linkie.shedaniel.dev/dependencies?loader=forge
     library("minecraft-forge", "net.minecraftforge", "forge")
         .version(
-            forgeVersions.getOrElse(minecraft) {
+            "$minecraft-${forgeVersions.getOrElse(minecraft) {
                 error("Unknown minecraft version $minecraft to get forge version")
-            })
+            }}")
 
     if (kotlin != null) {
         // https://modrinth.com/mod/kotlin-for-forge/versions

@@ -1,3 +1,9 @@
+pluginManagement {
+    repositories {
+        maven("https://repo.spongepowered.org/repository/maven-public/")
+    }
+}
+
 dependencyResolutionManagement {
     repositories {
         maven("https://maven.bawnorton.com") {

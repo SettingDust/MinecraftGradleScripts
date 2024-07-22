@@ -1,4 +1,16 @@
-pluginManagement { repositories { maven("https://maven.minecraftforge.net/") { name = "Forge" } } }
+pluginManagement {
+    repositories {
+        maven("https://maven.minecraftforge.net/") { name = "Forge" }
+        maven("https://nexus.gtnewhorizons.com/repository/public/") {
+            // RetroFuturaGradle
+            name = "GTNH Maven"
+            mavenContent {
+                includeGroupByRegex("com\\.gtnewhorizons\\..+")
+                includeGroup("com.gtnewhorizons")
+            }
+        }
+    }
+}
 
 val minecraft: String by settings.extra
 val kotlin: String? by settings.extra
@@ -15,7 +27,9 @@ dependencyResolutionManagement {
 }
 
 dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
-    plugin("forge-gradle", "net.minecraftforge.gradle").version("6.+")
+    if (minecraft == "1.12.2")
+        plugin("retro-gradle", "com.gtnewhorizons.retrofuturagradle").version("1.+")
+    else plugin("forge-gradle", "net.minecraftforge.gradle").version("6.+")
 
     val forgeVersions = mapOf("1.20.1" to "47.3.5")
     // https://linkie.shedaniel.dev/dependencies?loader=forge
@@ -28,18 +42,20 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     if (kotlin != null) {
         // https://modrinth.com/mod/kotlin-for-forge/versions
         // https://modrinth.com/mod/forgelin-continuous/versions
-        val kotlinForgeVersions = mapOf("1.21" to "5.3.0", "1.20.1" to "4.11.0", "1.12.2" to "2.0.0.0")
+        val kotlinForgeVersions =
+            mapOf("1.21" to "5.3.0", "1.20.1" to "4.11.0", "1.12.2" to "2.0.0.0")
         if (minecraft == "1.12.2") {
             library("kotlin-forge", "io.github.chaosunity.forgelin", "Forgelin-Continuous")
                 .version(
                     kotlinForgeVersions.getOrElse(minecraft) {
-                        error("Unknown minecraft version $minecraft to get Kotlin For Forge version")
+                        error("Unknown minecraft version $minecraft to get Forgelin version")
                     })
         } else {
             library("kotlin-forge", "thedarkcolour", "kotlinforforge")
                 .version(
                     kotlinForgeVersions.getOrElse(minecraft) {
-                        error("Unknown minecraft version $minecraft to get Kotlin For Forge version")
+                        error(
+                            "Unknown minecraft version $minecraft to get Kotlin For Forge version")
                     })
         }
     }

@@ -16,7 +16,10 @@ allprojects {
         maven("https://api.modrinth.com/maven") { content { includeGroup("maven.modrinth") } }
         maven("https://jitpack.io") { content { includeGroupAndSubgroups("com.github") } }
         maven("https://maven.cleanroommc.com") {
-            content { includeGroup("io.github.chaosunity.forgelin") }
+            content {
+                includeGroup("io.github.chaosunity.forgelin")
+                includeGroup("zone.rong")
+            }
         }
         maven("https://repo.spongepowered.org/repository/maven-public/")
         maven("https://maven.neoforged.net/releases")

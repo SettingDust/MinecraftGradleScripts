@@ -1,7 +1,5 @@
 pluginManagement {
-    repositories {
-        maven("https://repo.spongepowered.org/repository/maven-public/")
-    }
+    repositories { maven("https://repo.spongepowered.org/repository/maven-public/") }
 }
 
 dependencyResolutionManagement {
@@ -9,6 +7,7 @@ dependencyResolutionManagement {
         maven("https://maven.bawnorton.com") {
             content { includeGroupAndSubgroups("com.bawnorton.mixinsquared") }
         }
+        maven("https://maven.cleanroommc.com") { content { includeGroup("zone.rong") } }
         maven("https://repo.spongepowered.org/repository/maven-public/")
     }
 }
@@ -17,7 +16,7 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     plugin("mixin", "org.spongepowered.mixin").version("0.7-SNAPSHOT")
 
     library("mixin", "org.spongepowered", "mixin").version("0.8.7")
-    val mixinextras = "0.4.0"
+    val mixinextras = "0.5.0-beta.1"
     library("mixinextras-common", "io.github.llamalad7", "mixinextras-common").version(mixinextras)
     library("mixinextras-neoforge", "io.github.llamalad7", "mixinextras-neoforge")
         .version(mixinextras)
@@ -32,4 +31,6 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
         .version(mixinsquared)
     library("mixinsquared-forge", "com.bawnorton.mixinsquared", "mixinsquared-forge")
         .version(mixinsquared)
+
+    library("mixinbooter", "zone.rong", "mixinbooter").version("9.1")
 }

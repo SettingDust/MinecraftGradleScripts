@@ -31,13 +31,17 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
         plugin("retro-gradle", "com.gtnewhorizons.retrofuturagradle").version("1.+")
     else plugin("forge-gradle", "net.minecraftforge.gradle").version("6.+")
 
-    val forgeVersions = mapOf("1.20.1" to "47.3.5")
-    // https://linkie.shedaniel.dev/dependencies?loader=forge
-    library("minecraft-forge", "net.minecraftforge", "forge")
-        .version(
-            "$minecraft-${forgeVersions.getOrElse(minecraft) {
-                error("Unknown minecraft version $minecraft to get forge version")
-            }}")
+    if (minecraft != "1.12.2") {
+        val forgeVersions = mapOf("1.20.1" to "47.3.5")
+        // https://linkie.shedaniel.dev/dependencies?loader=forge
+        library("minecraft-forge", "net.minecraftforge", "forge")
+            .version(
+                "$minecraft-${
+                    forgeVersions.getOrElse(minecraft) {
+                        error("Unknown minecraft version $minecraft to get forge version")
+                    }
+                }")
+    }
 
     if (kotlin != null) {
         // https://modrinth.com/mod/kotlin-for-forge/versions

@@ -13,6 +13,10 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     plugin("explosion", "lol.bai.explosion").version("0.2.0")
     library("minecraft-fabric", "com.mojang", "minecraft").version(minecraft)
 
+    for (version in yarnMappingVersions) {
+        library("minecraft-fabric-$version", "com.mojang", "minecraft").version(version)
+    }
+
     plugin("fabric-loom", "fabric-loom").version("1.7.+")
 
     val yarnMappingVersions = mapOf("1.21" to "2", "1.20.1" to "10")

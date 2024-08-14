@@ -27,7 +27,7 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
 
     for (version in yarnMappingVersions) {
         library("mapping-yarn-${version.key}", "net.fabricmc", "yarn")
-            .version("$minecraft+build.${version.value}")
+            .version("${version.key}+build.${version.value}")
     }
 
     library("fabric-loader", "net.fabricmc", "fabric-loader").version("0.16.0")
@@ -43,7 +43,7 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
 
     for (version in fabricApiVersions) {
         library("fabric-api-${version.key}", "net.fabricmc.fabric-api", "fabric-api")
-            .version("${version.value}+$minecraft")
+            .version("${version.value}+${version.key}")
     }
 
     if (kotlin != null) {

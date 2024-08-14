@@ -61,6 +61,11 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
                         error(
                             "Unknown minecraft version $minecraft to get Kotlin For Forge version")
                     })
+
+            for (version in kotlinForgeVersions) {
+                library("kotlin-forge-${version.key}", "thedarkcolour", "kotlinforforge")
+                    .version(version.value)
+            }
         }
     }
 }

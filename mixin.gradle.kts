@@ -16,7 +16,7 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     plugin("mixin", "org.spongepowered.mixin").version("0.7-SNAPSHOT")
 
     library("mixin", "org.spongepowered", "mixin").version("0.8.7")
-    val mixinextras = "0.5.0-beta.1"
+    val mixinextras = "0.5.0-beta.2"
     library("mixinextras-common", "io.github.llamalad7", "mixinextras-common").version(mixinextras)
     library("mixinextras-neoforge", "io.github.llamalad7", "mixinextras-neoforge")
         .version(mixinextras)

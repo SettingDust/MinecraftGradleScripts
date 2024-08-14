@@ -27,4 +27,11 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     library("parchmentmc-loom", "org.parchmentmc.data", "parchment-${parchmentmcVersion.first}")
         .version(parchmentmcVersion.second)
     plugin("librarian-forgegradle", "org.parchmentmc.librarian.forgegradle").version("1.+")
+
+    for (version in parchmentmcVersions) {
+        version("parchmentmc-${version.key}", version.value)
+
+        library("parchmentmc-loom-${version.key}", "org.parchmentmc.data", "parchment-${version.key}")
+            .version(version.value)
+    }
 }

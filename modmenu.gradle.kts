@@ -10,7 +10,7 @@ dependencyResolutionManagement {
 
 dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     // https://modrinth.com/mod/modmenu/versions
-    val modmenuVersions = mapOf("1.21" to "11.0.0-rc.4", "1.20.1" to "7.2.2")
+    val modmenuVersions = mapOf("1.21" to "11.0.1", "1.20.1" to "7.2.2")
     library("modmenu", "com.terraformersmc", "modmenu")
         .version(
             modmenuVersions.getOrElse(minecraft) {
@@ -18,6 +18,6 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
             })
 
     for (version in modmenuVersions) {
-        library("modmenu-${version.key}", "com.terraformersmc", "modmenu").versionRef(version.value)
+        library("modmenu-${version.key}", "com.terraformersmc", "modmenu").version(version.value)
     }
 }

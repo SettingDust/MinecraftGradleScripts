@@ -15,7 +15,7 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
 
     plugin("fabric-loom", "fabric-loom").version("1.7.+")
 
-    val yarnMappingVersions = mapOf("1.21" to "2", "1.20.1" to "10")
+    val yarnMappingVersions = mapOf("1.21" to "9", "1.20.1" to "10")
     library("mapping-yarn", "net.fabricmc", "yarn")
         .version(
             "$minecraft+build.${

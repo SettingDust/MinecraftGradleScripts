@@ -22,5 +22,5 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     // https://github.com/palantir/gradle-git-version
     plugin("git-version", "com.palantir.git-version").version("3.+")
 
-    plugin("shadow", "io.github.goooler.shadow").version("8.+")
+    plugin("shadow", "com.gradleup.shadow").version("8.+")
 }

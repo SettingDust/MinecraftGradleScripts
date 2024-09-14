@@ -25,7 +25,8 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
 
 
     val neoforgeVersions = mapOf(
-        "1.21" to "21.0.16-beta"
+        "1.21" to "21.0.167",
+        "1.21.1" to "21.1.12"
     )
     // https://linkie.shedaniel.dev/dependencies?loader=neoforge
     library("neoforge", "net.neoforged", "neoforge").version(neoforgeVersions.getOrElse(minecraft) {

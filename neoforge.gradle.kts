@@ -23,6 +23,7 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     plugin("neoforge-gradle-vanilla", "net.neoforged.gradle.vanilla").version("7.+")
     plugin("neoforge-gradle-mixin", "net.neoforged.gradle.mixin").version("7.+")
 
+    plugin("neoforge-moddev", "net.neoforged.moddev").version("1.+")
 
     val neoforgeVersions = mapOf(
         "1.21" to "21.0.167",

@@ -37,7 +37,7 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     if (kotlin != null) {
         // https://modrinth.com/mod/kotlin-for-forge/versions
         val kotlinForgeVersions = mapOf(
-            "1.21" to "5.3.0"
+            "1.21" to "5.5.0"
         )
         library("kotlin-neoforge", "thedarkcolour", "kotlinforforge-neoforge").version(
             kotlinForgeVersions.getOrElse(

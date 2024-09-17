@@ -47,7 +47,7 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
         // https://modrinth.com/mod/kotlin-for-forge/versions
         // https://modrinth.com/mod/forgelin-continuous/versions
         val kotlinForgeVersions =
-            mapOf("1.21" to "5.3.0", "1.20.1" to "4.11.0", "1.12.2" to "2.0.0.1")
+            mapOf("1.21" to "5.5.0", "1.20.1" to "4.11.0", "1.12.2" to "2.0.20.0")
         if (minecraft == "1.12.2") {
             library("kotlin-forge", "io.github.chaosunity.forgelin", "Forgelin-Continuous")
                 .version(

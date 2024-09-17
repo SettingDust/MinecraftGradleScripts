@@ -48,7 +48,7 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
 
     if (kotlin != null) {
         // https://modrinth.com/mod/fabric-language-kotlin/versions
-        val fabricKotlinVersions = mapOf("2.0.0" to "1.11.0")
+        val fabricKotlinVersions = mapOf("2.0.20" to "1.12.1")
         library(
             "fabric-kotlin",
             "net.fabricmc",

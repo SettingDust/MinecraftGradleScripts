@@ -21,10 +21,15 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     library("yacl-neoforge", "dev.isxander", "yet-another-config-lib")
         .version("$yaclVersion-neoforge")
 
+    library("yacl-forge", "dev.isxander", "yet-another-config-lib")
+        .version("$yaclVersion-forge")
+
     for (version in yaclVersions) {
         library("yacl-fabric-${version.key}", "dev.isxander", "yet-another-config-lib")
             .version("${version.value}-fabric")
         library("yacl-neoforge-${version.key}", "dev.isxander", "yet-another-config-lib")
             .version("${version.value}-neoforge")
+        library("yacl-forge", "dev.isxander", "yet-another-config-lib")
+            .version("${version.value}-forge")
     }
 }

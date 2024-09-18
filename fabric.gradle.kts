@@ -30,7 +30,7 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
             .version("${version.key}+build.${version.value}")
     }
 
-    library("fabric-loader", "net.fabricmc", "fabric-loader").version("0.16.2")
+    library("fabric-loader", "net.fabricmc", "fabric-loader").version("0.16.5")
 
     val fabricApiVersions = mapOf("1.21" to "0.102.0", "1.20.1" to "0.92.2")
     library("fabric-api", "net.fabricmc.fabric-api", "fabric-api")

@@ -16,5 +16,5 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     library("kotlinx-coroutines", "org.jetbrains.kotlinx", "kotlinx-coroutines-core").version("1.9.0")
 
     // https://modrinth.com/mod/kinecraft-serialization/versions
-    library("kinecraft-serialization", "maven.modrinth", "kinecraft-serialization").version("1.9.0")
+    library("kinecraft-serialization", "maven.modrinth", "kinecraft-serialization").version("1.11.0")
 }

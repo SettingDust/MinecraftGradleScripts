@@ -21,6 +21,11 @@ allprojects {
                 includeGroup("zone.rong")
             }
         }
+        maven("https://maven.bawnorton.com/releases") {
+            content {
+                includeGroup("com.github.bawnorton.mixinsquared")
+            }
+        }
         maven("https://repo.spongepowered.org/repository/maven-public/")
         maven("https://maven.neoforged.net/releases")
         mavenCentral()

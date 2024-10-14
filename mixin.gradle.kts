@@ -22,7 +22,7 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
         .version(mixinextras)
     library("mixinextras-fabric", "io.github.llamalad7", "mixinextras-fabric").version(mixinextras)
 
-    val mixinsquared = "0.2.0-beta.6"
+    val mixinsquared = "0.2.0"
     library("mixinsquared-common", "com.bawnorton.mixinsquared", "mixinsquared-common")
         .version(mixinsquared)
     library("mixinsquared-fabric", "com.bawnorton.mixinsquared", "mixinsquared-fabric")

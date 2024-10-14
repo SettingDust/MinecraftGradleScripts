@@ -5,7 +5,7 @@ pluginManagement {
 dependencyResolutionManagement {
     repositories {
         maven("https://maven.bawnorton.com") {
-            content { includeGroupAndSubgroups("com.bawnorton.mixinsquared") }
+            content { includeGroupAndSubgroups("com.github.bawnorton.mixinsquared") }
         }
         maven("https://maven.cleanroommc.com") { content { includeGroup("zone.rong") } }
         maven("https://repo.spongepowered.org/repository/maven-public/")
@@ -23,13 +23,13 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     library("mixinextras-fabric", "io.github.llamalad7", "mixinextras-fabric").version(mixinextras)
 
     val mixinsquared = "0.2.0"
-    library("mixinsquared-common", "com.bawnorton.mixinsquared", "mixinsquared-common")
+    library("mixinsquared-common", "com.github.bawnorton.mixinsquared", "mixinsquared-common")
         .version(mixinsquared)
-    library("mixinsquared-fabric", "com.bawnorton.mixinsquared", "mixinsquared-fabric")
+    library("mixinsquared-fabric", "com.github.bawnorton.mixinsquared", "mixinsquared-fabric")
         .version(mixinsquared)
-    library("mixinsquared-neoforge", "com.bawnorton.mixinsquared", "mixinsquared-neoforge")
+    library("mixinsquared-neoforge", "com.github.bawnorton.mixinsquared", "mixinsquared-neoforge")
         .version(mixinsquared)
-    library("mixinsquared-forge", "com.bawnorton.mixinsquared", "mixinsquared-forge")
+    library("mixinsquared-forge", "com.github.bawnorton.mixinsquared", "mixinsquared-forge")
         .version(mixinsquared)
 
     library("mixinbooter", "zone.rong", "mixinbooter").version("9.1")

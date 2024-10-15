@@ -26,6 +26,7 @@ allprojects {
                 includeGroup("com.github.bawnorton.mixinsquared")
             }
         }
+        maven("https://maven.architectury.dev/") { content { includeGroup("dev.architectury") } }
         maven("https://repo.spongepowered.org/repository/maven-public/")
         maven("https://maven.neoforged.net/releases")
         mavenCentral()

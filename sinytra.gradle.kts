@@ -3,7 +3,10 @@ val minecraft: String by settings.extra
 dependencyResolutionManagement {
     repositories {
         maven("https://maven.su5ed.dev/releases") {
-            content { includeGroupAndSubgroups("org.sinytra") }
+            content {
+                includeGroupAndSubgroups("dev.su5ed")
+                includeGroupAndSubgroups("org.sinytra")
+            }
         }
     }
 }
@@ -19,14 +22,26 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     if (minecraft == "1.20.1") {
         library("forgified-fabric-api", "dev.su5ed.sinytra.fabric-api", "fabric-api").version(ffapiVersion)
     } else {
-        library("forgified-fabric-api", "org.sinytra.forgified-fabric-api", "forgified-fabric-api").version(ffapiVersion)
+        library(
+            "forgified-fabric-api",
+            "org.sinytra.forgified-fabric-api",
+            "forgified-fabric-api"
+        ).version(ffapiVersion)
     }
 
     for (version in ffapiVersions) {
         if (version.key == "1.20.1") {
-            library("forgified-fabric-api-${version.key}", "org.sinytra.forgified-fabric-api", "forgified-fabric-api").version(version.value)
+            library(
+                "forgified-fabric-api-${version.key}",
+                "org.sinytra.forgified-fabric-api",
+                "forgified-fabric-api"
+            ).version(version.value)
         } else {
-            library("forgified-fabric-api-${version.key}", "org.sinytra.forgified-fabric-api", "forgified-fabric-api").version(version.value)
+            library(
+                "forgified-fabric-api-${version.key}",
+                "org.sinytra.forgified-fabric-api",
+                "forgified-fabric-api"
+            ).version(version.value)
         }
 
     }

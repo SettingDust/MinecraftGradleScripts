@@ -27,6 +27,9 @@ allprojects {
             }
         }
         maven("https://maven.architectury.dev/") { content { includeGroup("dev.architectury") } }
+        maven("https://maven.su5ed.dev/releases") {
+            content { includeGroupAndSubgroups("org.sinytra") }
+        }
         maven("https://repo.spongepowered.org/repository/maven-public/")
         maven("https://maven.neoforged.net/releases")
         mavenCentral()

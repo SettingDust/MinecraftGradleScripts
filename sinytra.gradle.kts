@@ -16,9 +16,18 @@ dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
         ffapiVersions.getOrElse(minecraft) {
             error("Unknown minecraft version $minecraft to get Forgified Fabric API version")
         }
-    library("forgified-fabric-api", "org.sinytra.forgified-fabric-api", "forgified-fabric-api").version(ffapiVersion)
+    if (minecraft == "1.20.1") {
+        library("forgified-fabric-api", "dev.su5ed.sinytra.fabric-api", "fabric-api").version(ffapiVersion)
+    } else {
+        library("forgified-fabric-api", "org.sinytra.forgified-fabric-api", "forgified-fabric-api").version(ffapiVersion)
+    }
 
     for (version in ffapiVersions) {
-        library("forgified-fabric-api-${version.key}", "org.sinytra.forgified-fabric-api", "forgified-fabric-api").version(version.value)
+        if (version.key == "1.20.1") {
+            library("forgified-fabric-api-${version.key}", "org.sinytra.forgified-fabric-api", "forgified-fabric-api").version(version.value)
+        } else {
+            library("forgified-fabric-api-${version.key}", "org.sinytra.forgified-fabric-api", "forgified-fabric-api").version(version.value)
+        }
+
     }
 }

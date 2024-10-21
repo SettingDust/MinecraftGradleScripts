@@ -10,7 +10,7 @@ dependencyResolutionManagement {
 
 dependencyResolutionManagement.versionCatalogs.maybeCreate("catalog").apply {
     // https://modrinth.com/mod/yacl/versions
-    val yaclVersions = mapOf("1.21" to "3.5.0+$minecraft", "1.20.1" to "3.5.0+$minecraft")
+    val yaclVersions = mapOf("1.21" to "3.6.0+$minecraft", "1.20.1" to "3.6.0+$minecraft")
 
     val yaclVersion =
         yaclVersions.getOrElse(minecraft) {
